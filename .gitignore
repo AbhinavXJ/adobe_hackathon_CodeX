@@ -1,0 +1,37 @@
+# Virtual Environments (both rounds)
+*/venv/
+venv/
+env/
+.venv/
+.env/
+round1a/venv/
+round1b/venv/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Models and Cache
+models/
+*/models/
+*.pkl
+nltk_data/
+
+# Output files
+output.json
+*/output.json
+
