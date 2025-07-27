@@ -10,7 +10,8 @@ Execution Instructions for Round 1B Dockerized Solution
     
     *   **The input.json file** with the following content (adapt values as needed):
         
-    *   {
+    *   ```json 
+    {
         
         "challenge\_info": {
         
@@ -95,6 +96,7 @@ Execution Instructions for Round 1B Dockerized Solution
         }
         
         }
+    ```
         
     *   Place **all** the mentioned PDF files inside the **same input directory**.
         
