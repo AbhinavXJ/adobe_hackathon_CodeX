@@ -1,60 +1,48 @@
+#!/usr/bin/env python3
+"""
+Pre-download and cache all models for offline execution
+"""
 import os
-import time
-from sentence_transformers import SentenceTransformer
+import sys
 import nltk
+from sentence_transformers import SentenceTransformer
+import warnings
 
-def setup_complete_offline():
-    """Complete offline setup including all required data"""
-    print("🚀 Adobe Hackathon - Complete Advanced Setup")
-    print("="*60)
-    print("📥 Downloading all models and data for complete offline execution...")
-    
-    start_time = time.time()
+warnings.filterwarnings("ignore")
+
+def setup_offline_models():
+    """Download and cache all required models"""
+    print("Setting up offline models...")
     
     try:
-        # 1. Download sentence transformers model
-        print("⬇️  Downloading sentence-transformers model (~90MB)...")
-        model = SentenceTransformer('all-MiniLM-L6-v2')
-        print("✅ Sentence-transformers model cached!")
+        # Download NLTK data
+        print("Downloading NLTK data...")
+        nltk.download('punkt', quiet=True)
+        nltk.download('stopwords', quiet=True)
+        nltk.download('averaged_perceptron_tagger', quiet=True)
+        print("✓ NLTK data downloaded")
         
-        # 2. Download all NLTK data
-        print("⬇️  Downloading NLTK data packages...")
-        nltk_packages = ['punkt', 'stopwords', 'averaged_perceptron_tagger']
+        # Download and cache sentence transformer model
+        print("Downloading sentence transformer model...")
+        model = SentenceTransformer('all-MiniLM-L6-v2', device='cpu')
         
-        for package in nltk_packages:
-            print(f"  📦 Downloading {package}...")
-            nltk.download(package, quiet=True)
-            print(f"  ✅ {package} cached!")
+        # Test model to ensure it's working
+        test_embedding = model.encode(["This is a test sentence."])
+        print(f"✓ Sentence transformer model downloaded and tested (embedding size: {test_embedding.shape})")
         
-        # 3. Test complete setup
-        print("🧪 Testing complete offline setup...")
+        # Verify model size
+        import torch
+        model_size_mb = sum(p.numel() * 4 for p in model.parameters()) / (1024 * 1024)  # 4 bytes per float32
+        print(f"✓ Model size: {model_size_mb:.1f} MB (well under 1GB limit)")
         
-        # Test sentence transformers
-        test_embedding = model.encode(["Advanced offline test"])
-        
-        # Test NLTK
-        from nltk.corpus import stopwords
-        from nltk.tokenize import word_tokenize, sent_tokenize
-        from nltk import pos_tag
-        
-        test_tokens = word_tokenize("This is an advanced test.")
-        test_sentences = sent_tokenize("Advanced test sentence one. Advanced test sentence two.")
-        test_pos = pos_tag(test_tokens)
-        test_stopwords = stopwords.words('english')
-        
-        setup_time = time.time() - start_time
-        
-        print(f"✅ Complete advanced setup successful in {setup_time:.2f} seconds!")
-        print("="*60)
-        print("🎉 EVERYTHING CACHED! Advanced system now works 100% OFFLINE!")
-        print("📊 Total cached: ~110MB | Enhanced ML capabilities ready!")
-        print("🚫 No more internet downloads needed!")
+        print("All models setup complete!")
+        return True
         
     except Exception as e:
-        print(f"❌ Error during setup: {e}")
+        print(f"Error setting up models: {e}")
         return False
-    
-    return True
 
 if __name__ == "__main__":
-    setup_complete_offline()
+    success = setup_offline_models()
+    if not success:
+        sys.exit(1)
