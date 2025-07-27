@@ -126,7 +126,9 @@ Execution Instructions for Round 1B Dockerized Solution
 
 From your project root (where Dockerfile is located), run:
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   docker build --platform linux/amd64 -t mysolutionname:somerandomidentifier .   `
+```console
+   docker build --platform linux/amd64 -t mysolutionname:somerandomidentifier .   
+   ```
 
 *   Replace mysolutionname:somerandomidentifier with your preferred image name/tag.
     
@@ -138,11 +140,15 @@ Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQL
 
 Ensure you have an empty output directory ready:
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   mkdir -p output   `
+```console
+   mkdir -p output   
+   ```
 
 Then run:
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   docker run --rm \    -v $(pwd)/input:/app/input \    -v $(pwd)/output:/app/output \    --network none \    mysolutionname:somerandomidentifier   `
+```console   
+docker run --rm \    -v $(pwd)/input:/app/input \    -v $(pwd)/output:/app/output \    --network none \    mysolutionname:somerandomidentifier   
+```
 
 Explanation:
 
@@ -168,7 +174,21 @@ Explanation:
 Summary Example Commands
 ------------------------
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   # Prepare directories  mkdir -p input output  # Place input.json and all PDFs into input/  # Build image  docker build --platform linux/amd64 -t mysolutionname:somerandomidentifier .  # Run container  docker run --rm -v $(pwd)/input:/app/input -v $(pwd)/output:/app/output --network none mysolutionname:somerandomidentifier  # View results  cat output/output.json   `
+```console  
+# Prepare directories  
+mkdir -p input output  
+
+# Place input.json and all PDFs into input/  
+
+# Build image  
+docker build --platform linux/amd64 -t mysolutionname:somerandomidentifier .  
+
+# Run container  
+docker run --rm -v $(pwd)/input:/app/input -v $(pwd)/output:/app/output --network none mysolutionname:somerandomidentifier  
+
+# View results  
+cat output/output.json   
+```
 
 FAQs
 ====
