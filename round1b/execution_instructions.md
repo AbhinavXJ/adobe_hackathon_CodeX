@@ -12,91 +12,49 @@ Execution Instructions for Round 1B Dockerized Solution
         
     *   
         ```json 
-        {
-        
-            "challenge\_info": {
-            
-            "challenge\_id": "round\_1b\_002",
-            
-            "test\_case\_name": "travel\_planner",
-            
-            "description": "France Travel"
-            
-            },
-            
-            "documents": \[
-            
             {
-            
-            "filename": "South of France - Cities.pdf",
-            
-            "title": "South of France - Cities"
-            
+            "challenge_info": {
+                "challenge_id": "round_1b_002",
+                "test_case_name": "travel_planner",
+                "description": "France Travel"
             },
-            
-            {
-            
-            "filename": "South of France - Cuisine.pdf",
-            
-            "title": "South of France - Cuisine"
-            
-            },
-            
-            {
-            
-            "filename": "South of France - History.pdf",
-            
-            "title": "South of France - History"
-            
-            },
-            
-            {
-            
-            "filename": "South of France - Restaurants and Hotels.pdf",
-            
-            "title": "South of France - Restaurants and Hotels"
-            
-            },
-            
-            {
-            
-            "filename": "South of France - Things to Do.pdf",
-            
-            "title": "South of France - Things to Do"
-            
-            },
-            
-            {
-            
-            "filename": "South of France - Tips and Tricks.pdf",
-            
-            "title": "South of France - Tips and Tricks"
-            
-            },
-            
-            {
-            
-            "filename": "South of France - Traditions and Culture.pdf",
-            
-            "title": "South of France - Traditions and Culture"
-            
-            }
-            
-            \],
-            
+            "documents": [
+                {
+                    "filename": "South of France - Cities.pdf",
+                    "title": "South of France - Cities"
+                },
+                {
+                    "filename": "South of France - Cuisine.pdf",
+                    "title": "South of France - Cuisine"
+                },
+                {
+                    "filename": "South of France - History.pdf",
+                    "title": "South of France - History"
+                },
+                {
+                    "filename": "South of France - Restaurants and Hotels.pdf",
+                    "title": "South of France - Restaurants and Hotels"
+                },
+                {
+                    "filename": "South of France - Things to Do.pdf",
+                    "title": "South of France - Things to Do"
+                },
+                {
+                    "filename": "South of France - Tips and Tricks.pdf",
+                    "title": "South of France - Tips and Tricks"
+                },
+                {
+                    "filename": "South of France - Traditions and Culture.pdf",
+                    "title": "South of France - Traditions and Culture"
+                }
+            ],
             "persona": {
-            
-            "role": "Travel Planner"
-            
+                "role": "Travel Planner"
             },
-            
-            "job\_to\_be\_done": {
-            
-            "task": "Plan a trip of 4 days for a group of 10 college friends."
-            
+            "job_to_be_done": {
+                "task": "Plan a trip of 4 days for a group of 10 college friends."
             }
-            
-            }
+        }
         ```
         
     *   Place **all** the mentioned PDF files inside the **same input directory**.
