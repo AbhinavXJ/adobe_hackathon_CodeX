@@ -1,0 +1,10 @@
+# Don't include these in Docker image
+venv/
+__pycache__/
+*.pyc
+.git/
+.gitignore
+README.md
+test_input/
+test_output/
+.DS_Store

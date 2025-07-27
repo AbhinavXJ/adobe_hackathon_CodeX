@@ -1,0 +1,25 @@
+{
+  "title": "SUJAL AGRE",
+  "outline": [
+    {
+      "level": "H1",
+      "text": "Introduction",
+      "page": 1
+    },
+    {
+      "level": "H1",
+      "text": "Education",
+      "page": 1
+    },
+    {
+      "level": "H2",
+      "text": "Projects",
+      "page": 1
+    },
+    {
+      "level": "H1",
+      "text": "Technical Skills",
+      "page": 1
+    }
+  ]
+}
