@@ -108,7 +108,8 @@ Ensure you have an empty output directory ready:
 Then run:
 
 ```console   
-docker run --rm \    -v $(pwd)/input:/app/input \    -v $(pwd)/output:/app/output \    --network none \    mysolutionname:somerandomidentifier   
+    docker run --rm -v $(pwd)/input:/app/input -v $(pwd)/output:/app/output --network none mysolutionname:somerandomidentifier  
+
 ```
 
 Explanation:
